@@ -31,5 +31,5 @@ int main() {
     ProfilerStop();
 #endif
     cout << result << "\n";
-    return 1;
+    return 0;
 }

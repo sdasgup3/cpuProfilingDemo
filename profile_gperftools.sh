@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # build the program; For our demo program, we specify -DWITHGPERFTOOLS to enable the gperftools specific #ifdefs
-g++ -std=c++11 -DWITHGPERFTOOLS -lprofiler -g cpuload.cpp -o cpuload
+export LD_LIBRARY_PATH=/home/sdasgup3/Install/gperftools.install/lib/:$LD_LIBRARY_PATH
+export PATH=/home/sdasgup3/Install/gperftools.install/bin/:$PATH
+g++ -no-pie -std=c++11 -DWITHGPERFTOOLS -I /home/sdasgup3/Install/gperftools.install/include/ -L/home/sdasgup3/Install/gperftools.install/lib  -g cpuload.cpp   -lprofiler    -o cpuload
 
 # run the program; generates the profiling data file (profile.log in our example)
 ./cpuload
