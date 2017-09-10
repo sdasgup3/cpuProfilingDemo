@@ -7,4 +7,4 @@ g++ -no-pie -std=c++11 -g cpuload.cpp -o cpuload
 sudo perf record -g ./cpuload
 
 # analyze the profile
-perf report
+sudo perf report
